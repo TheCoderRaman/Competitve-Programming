@@ -50,3 +50,9 @@ elif inOrder(lista) == False:
 
 else:
     print("no")
+    
+
+
+
+
+
