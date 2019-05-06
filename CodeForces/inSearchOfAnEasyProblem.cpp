@@ -13,8 +13,9 @@ int main(){
     int k,n;
     string s = "easy";
     int arr[101];
-        
+
     cin >> n;
+    //For, agrega a la lista y si es 1 devuelve hard
     fori(n){
         cin >> k;
         arr[i] = k;
