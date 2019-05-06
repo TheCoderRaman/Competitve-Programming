@@ -38,3 +38,7 @@ def fib_bottom_up(n):
 print("Recursivo: ", fib(35))
 print("Dinamico: " , fib_memo(1000))
 print("Bottom Up: " ,fib_bottom_up(1000))
+
+
+
+
