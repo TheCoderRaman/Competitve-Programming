@@ -15,18 +15,30 @@
 #include <sstream>
 using namespace std;
 int main(){
-
-    int n, nIceCreams, inputInt = 0;
-    string input;
+    //?Recibir inputs
+    int n, nIceCreams, inputInt = 0, disa = 0;
+    string input, number;
     cin >> n >> nIceCreams;
-    for(int i = 0; i < n; i++){
-        getline(cin,input);
+    //?Se usa getline para obtener todo
+    for(int i = 0; i <= n; i++){
+        getline(cin,input);  
+        //?Si tiene un mas se suma si no se resta             
         if(input[0] == '+'){
-         >> inputInt;
-            cout << inputInt;
+            //!Aiuda, esto es para parsear de str a int pero debe de exisitir una mejor manera
+            number = input.substr(2,input.length()-1);
+            stringstream numbStream(number);  
+            numbStream >> inputInt;
             nIceCreams += inputInt;
-            cout << nIceCreams << endl;
+        }
+        else if(input[0] == '-'){
+            number = input.substr(2,input.length()-1);
+            stringstream numbStream(number);  
+            numbStream >> inputInt; 
+            //?Solo da helado si hay la cantidad que solicito
+            if(inputInt <= nIceCreams)nIceCreams -= inputInt;
+            else disa++;
         }
     }
+    cout << nIceCreams << " " << disa << endl;
     return 0;
 }
